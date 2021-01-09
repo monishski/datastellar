@@ -1,0 +1,112 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap" rel="stylesheet">
+        <title>datastellar</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <a class="header__logo" href='/'>
+                    <img src="svg/logo.svg" alt="Logo"/>
+                    <!-- <div class="header__logo--logo">
+                        <svg>
+                            <use xlink:href="./svg/logo.svg#logo"></use>
+                         </svg>
+                    </div> -->
+                    <div class="header__logo--text">
+                        <span>data</span>stellar
+                    </div>
+                </a>
+                <nav class="header__nav">
+                    <ul>
+                        <!-- <li><a href='#'>Why Us?</a></li> -->
+                        <li><a href='/solutions'>Solutions</a></li>
+                    </ul>
+                    <a class="header__nav--btn" href="/contactus">Contact Us</a>
+                </nav>
+            </div>
+            <div class="core__text">
+                <h1 class="core__text--h1"></h1>
+                <p>We harness your data to help you create an engine for growth.</p>
+            </div>
+            <div class="core__svg">
+                <img src="./svg/statistics.svg" alt="Statistics SVG">
+                <div><a href="/contactus">Get a quote &rarr;</a></div>
+                <a href="https://storyset.com/business">[Illustration by Freepik Storyset]</a>
+            </div>
+            <div class="core__services">
+                <div class="core__services--item">
+                        <img src="./svg/automation.svg" alt="Automation SVG">
+                    <div class="core__services--item--text">
+                        <h4>Process Automation</h4>
+                        <p>Streamline manual processes with automation</p>
+                    </div>
+                </div>
+                <div class="core__services--item">
+                    <img src="./svg/dashboarding.svg" alt="Dashboarding SVG">
+                    <div class="core__services--item--text">
+                        <h4>Dashboarding</h4>
+                        <p>Optimise operations and identify inefficiencies through KPI's</p>
+                    </div>
+                </div>
+                <div class="core__services--item">
+                    <img src="./svg/data_mining.svg" alt="Data Mining SVG">
+                    <div class="core__services--item--text">
+                        <h4>Data Mining</h4>
+                        <p>Find profitable relationships through analytics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <a class="links__quote" href="/contactus">Get a quote &rarr;</a>
+                <a href="/solutions">Explore all solutions &rarr;</a>
+                
+            </div>
+        </div>
+        <script>
+            // Source code: https://css-tricks.com/snippets/css/typewriter-effect/
+
+            document.addEventListener('DOMContentLoaded', function(event){
+
+            if (document.querySelector(".core__text--h1")) {
+                var texts = [ "We are datastellar." ];
+                
+                function typeWriter(text, i, callback) {
+                    if (i < text.length) { 
+                        var span = '<span class="core__text--span" aria-hidden="true"></span>'; // Border -> Cursor
+                        document.querySelector(".core__text--h1").innerHTML = text.substring(0, i+1) + span
+
+                        setTimeout(function() {
+                            typeWriter(text, i+1, callback)
+                        }, 50);
+                    }      
+                    else if (typeof callback == 'function') { //?
+                        setTimeout(callback, 700); 
+                    }
+                }
+
+                function startTextAnimation(i) {
+                    if (typeof texts[i] == 'undefined'){
+                        setTimeout(function() {
+                            startTextAnimation(0);
+                        }, 20000); //20s?
+                    }   
+                    if (texts[i]) {
+                        if (i < texts[i].length) { 
+                            typeWriter(texts[i], 0, function(){ 
+                                startTextAnimation(i+1); 
+                            });
+                        }
+                    }
+                }
+                
+                startTextAnimation(0); 
+            }
+            });
+        </script>
+    </body>
+</html>

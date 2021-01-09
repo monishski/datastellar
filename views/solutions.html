@@ -1,0 +1,185 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap" rel="stylesheet">
+        <title>datastellar &#8211; solutions</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <a class="header__logo" href='/'>
+                    <img src="svg/logo.svg" alt="Logo"/>
+                    <!-- <div class="header__logo--logo">
+                        <svg>
+                            <use xlink:href="./svg/logo.svg#logo"></use>
+                         </svg>
+                    </div> -->
+                    <div class="header__logo--text">
+                        <span>data</span>stellar
+                    </div>
+                </a>
+                <nav class="header__nav">
+                    <ul>
+                        <!-- <li><a href='#'>Why Us?</a></li> -->
+                        <li><a href='/'>Home</a></li>
+                    </ul>
+                    <a class="header__nav--btn" href="/contactus">Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="solutions">
+
+                <div class="solutions__bar">
+                    <div class="solutions__bar__timeline">
+                        <ul>
+                            <li class="highlighted"><span>[1/5] </span>Data Management</li>
+                            <li><span>[2/5] </span>Dashboarding</li>
+                            <li><span>[3/5] </span>Data Mining</li>
+                            <li><span>[4/5] </span>Process Automation</li>
+                            <li><span>[5/5] </span>Web Scraping</li>
+                        </ul>
+                    </div>
+    
+                    <div class="solutions__bar__scroll">
+                        <img class="solutions__bar__scroll--mouse" src="./svg/mouse.svg" alt="Mouse SVG">
+                        <img class="solutions__bar__scroll--arrow-up" src="./svg/arrow.svg" alt="Arrow Up SVG">
+                        <img class="solutions__bar__scroll--arrow-down" src="./svg/arrow.svg" alt="Arrow Down SVG">
+                        <p class="solutions__bar__scroll--text">Scroll</p>
+                    </div>
+                </div>
+                
+                <!-- <div class="solutions__border"></div> -->
+
+                <section class="solutions__content active">
+                    <div class="solutions__content--svg">
+                        <img src="./svg/data_management.svg" alt="Data Management SVG">
+                    </div>
+                    <div class="solutions__content--text">
+                        <h1>Data Management</h1>
+                        <p>Leverage cloud based technologies to manage data</p>
+                        <ul>
+                            <li>Store data in the cloud and directly benefit from low maintainance and high accessibility</li>
+                            <li class="u-margin-top-bottom">Create an agile data management ecosystem and innovate faster</li>
+                            <li>Scale easily and flexibly as your business demand grows</li>
+    
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="solutions__content">
+                    <div class="solutions__content--svg">
+                        <img src="./svg/dashboarding.svg" alt="Dashboarding SVG">
+                    </div>
+                    <div class="solutions__content--text">
+                        <h1>Dashboarding</h1>
+                        <p>Optimise operations and identify inefficiencies through KPI's</p>
+                        <ul>
+                            <li>Visualise and monitor real time data through bespoke dashboards with rich user experience</li>
+                            <li class="u-margin-top-bottom">Centralise your reporting suite and reduce data conflicts with one version of the truth</li>
+                            <li>Make actionable business decisions in situ</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="solutions__content">
+                    <div class="solutions__content--svg">
+                        <img src="./svg/data_mining.svg" alt="Data Mining SVG">
+                    </div>
+                    <div class="solutions__content--text">
+                        <h1>Data Mining</h1>
+                        <p>Find profitable relationships through analytics</p>
+                        <ul>
+                            <li>Pinpoint and interpolate key trends to maximise customer or supply chain value</li>
+                            <li class="u-margin-top-bottom">Uncover opportunities with profiling all ends of your buinses from your customers, your suppliers to your products</li>
+                            <li>Drive change using robust statistical modelling</li>
+                        </ul>
+                    </div>
+                    
+                </section>
+                
+                <section class="solutions__content">
+                    <div class="solutions__content--svg">
+                        <img src="./svg/automation.svg" alt="Automation SVG">
+                    </div>
+                    <div class="solutions__content--text">
+                        <h1>Process Automation</h1>
+                        <p>Streamline manual processes with automation</p>
+                        <ul>
+                            <li>Automate administrative and repetitive tasks to reduce overhead costs</li>
+                            <li class="u-margin-top-bottom">Augment your workflow with modern technologies and regain valuable time</li>
+                            <li>Accelerate productivity by empowering your employees with digitally aided solutions</li>
+                        </ul>
+                    </div>
+                    
+                </section>
+
+                <section class="solutions__content">
+                    <div class="solutions__content--svg">
+                        <img src="./svg/crawler.svg" alt="Web Crawler SVG">
+                    </div>
+                    <div class="solutions__content--text">
+                        <h1>Web Scraping</h1>
+                        <p>Stay ahead of your competitors</p>
+                        <ul>
+                            <li>Build a complete product/pricing landscape of your competitor using smart internet crawlers</li>
+                            <li class="u-margin-top-bottom">Harvest a dynamic dataset of your competitor</li>
+                            <li>Navigate new product and service spaces with confidence</li>
+                        </ul>
+                    </div>
+                </section>
+    
+            </div>
+
+            
+        </div>
+        <script>
+            // https://stackoverflow.com/questions/55601867/how-to-change-section-on-scroll
+            let sections = document.getElementsByTagName('section');
+            let listElements = [...document.getElementsByTagName('li')].slice(1);
+            // console.log(listElements)
+            // tracks index of current section
+            let currentIndex = 0;
+
+            document.addEventListener('wheel', e => {
+                if (e.wheelDeltaY > 0 && currentIndex - 1 >= 0) {
+                    // wheel up
+                    sections[currentIndex].className = 'solutions__content';
+                    listElements[currentIndex].className = '';
+                    currentIndex--;
+                    sections[currentIndex].className = 'solutions__content active';
+                    listElements[currentIndex].className = 'highlighted';
+                } else if (e.wheelDeltaY < 0 && currentIndex + 1 < sections.length) {
+                    // wheel down
+                    sections[currentIndex].className = 'solutions__content';
+                    listElements[currentIndex].className = '';
+                    currentIndex++;
+                    sections[currentIndex].className = 'solutions__content active';
+                    listElements[currentIndex].className = 'highlighted';
+                }
+            });
+
+            document.addEventListener('keydown', e => {
+                const key = e.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+                if (key === "ArrowUp" && currentIndex - 1 >= 0) {
+                    // Up pressed
+                    sections[currentIndex].className = 'solutions__content';
+                    listElements[currentIndex].className = '';
+                    currentIndex--;
+                    sections[currentIndex].className = 'solutions__content active';
+                    listElements[currentIndex].className = 'highlighted';
+                } else if (key === "ArrowDown" && currentIndex + 1 < sections.length) {
+                    sections[currentIndex].className = 'solutions__content';
+                    listElements[currentIndex].className = '';
+                    currentIndex++;
+                    sections[currentIndex].className = 'solutions__content active';
+                    listElements[currentIndex].className = 'highlighted';
+
+                }
+            });
+
+        </script>
+    </body>
+</html>

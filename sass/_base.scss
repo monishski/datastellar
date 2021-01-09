@@ -1,0 +1,75 @@
+// COLOR VARIABLES
+$color-primary: #1aa3ff;
+$color-secondary: black;
+$color-bg: #f4f4f4;
+
+// FONT VARIABLES
+$font-primary: 'Inconsolata', monospace;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+    font-family: $font-primary;
+    font-weight: 400;
+    padding: 2rem 1rem;
+    background-color: $color-bg;
+
+    @media only screen and (max-width: 1300px) {
+        padding: 1.5rem 1rem;
+    }
+
+    @media only screen and (max-width: 700px) {
+        padding: 1.25rem 1rem;
+    }
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns: 60px repeat(6, 1fr) 60px;
+    grid-gap: 1rem;
+
+    @media only screen and (max-width: 1100px) {
+        grid-template-rows: repeat(11, 1fr);
+        grid-template-columns: 60px repeat(4, 1fr) 60px;
+        grid-gap: 1.5rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: 30px repeat(4, 1fr) 30px;
+    }
+
+    @media only screen and (max-width: 400px) {
+        grid-template-columns: 7.5px repeat(4, 1fr) 7.5px;
+    }
+
+}
+
+// .container {
+//     display: grid;
+//     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+//     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+//     @media only screen and (max-width: $bp-large) {
+//         grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+//         grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+//     }
+
+//     @media only screen and (max-width: $bp-medium) {
+//         grid-template-rows: 6rem calc(100vh - 6rem);
+//     }
+// }
