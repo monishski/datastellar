@@ -55,9 +55,9 @@
                 font-size: 1.4rem;
             }
 
-            @media only screen and (max-width: 600px) {
-                font-size: 1.2rem;
-            }
+            // @media only screen and (max-width: 600px) {
+            //     font-size: 1.2rem;
+            // }
             
             label {
                 padding: 0.25rem 1rem;
@@ -100,13 +100,13 @@
             p {
                 font-size: 1.5rem;
 
-                @media only screen and (max-width: 1100px) {
-                    font-size: 1.25rem;
-                }
+                // @media only screen and (max-width: 1100px) {
+                //     font-size: 1.25rem;
+                // }
 
-                @media only screen and (max-width: 600px) {
-                    font-size: 1rem;
-                }
+                // @media only screen and (max-width: 600px) {
+                //     font-size: 15rem;
+                // }
             }
         }
 
@@ -154,13 +154,14 @@
                 margin-right: 3rem;
 
                 @media only screen and (max-width: 1100px) {
-                    font-size: 1.3rem;
+                    // font-size: 1.3rem;
+                    margin-bottom: .5rem;
                 }
 
-                @media only screen and (max-width: 700px) {
-                    font-size: 1.2rem;
-                    // margin-top: .5rem;
-                }
+                // @media only screen and (max-width: 700px) {
+                //     font-size: 1.2rem;
+                //     // margin-top: .5rem;
+                // }
 
                 input { 
                     margin-right: 1rem;

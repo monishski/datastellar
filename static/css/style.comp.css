@@ -237,15 +237,15 @@ body {
             font-size: 2.5rem; } }
         @media only screen and (max-width: 600px) {
           .core__services--item--text h4 {
-            font-size: 1.75rem; } }
+            font-size: 2rem; } }
       .core__services--item--text p {
         font-size: 1.5rem; }
         @media only screen and (max-width: 600px) {
           .core__services--item--text p {
-            font-size: 1.25rem; } }
+            font-size: 1.4rem; } }
         @media only screen and (max-width: 400px) {
           .core__services--item--text p {
-            font-size: 1rem; } }
+            font-size: 1.25rem; } }
     .core__services--item img {
       width: 30%;
       height: 70%;
@@ -519,9 +519,6 @@ body {
     @media only screen and (max-width: 1100px) {
       .contactus__form form {
         font-size: 1.4rem; } }
-    @media only screen and (max-width: 600px) {
-      .contactus__form form {
-        font-size: 1.2rem; } }
     .contactus__form form label {
       padding: 0.25rem 1rem; }
     .contactus__form form textarea {
@@ -547,12 +544,6 @@ body {
           font-size: 2rem; } }
     .contactus__form--text p {
       font-size: 1.5rem; }
-      @media only screen and (max-width: 1100px) {
-        .contactus__form--text p {
-          font-size: 1.25rem; } }
-      @media only screen and (max-width: 600px) {
-        .contactus__form--text p {
-          font-size: 1rem; } }
   .contactus__form--input {
     margin: 0.5rem 1rem;
     outline: none;
@@ -586,10 +577,7 @@ body {
       margin-right: 3rem; }
       @media only screen and (max-width: 1100px) {
         .contactus__form--checkbox--item {
-          font-size: 1.3rem; } }
-      @media only screen and (max-width: 700px) {
-        .contactus__form--checkbox--item {
-          font-size: 1.2rem; } }
+          margin-bottom: .5rem; } }
       .contactus__form--checkbox--item input {
         margin-right: 1rem; }
   .contactus__form--btn {
