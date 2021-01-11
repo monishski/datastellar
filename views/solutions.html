@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style_.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap" rel="stylesheet">
         <title>datastellar &#8211; solutions</title>
@@ -228,7 +228,7 @@
             });
 
             //https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
-            var xDown = null;                                                        
+            // var xDown = null;                                                        
             var yDown = null;
 
             function getTouches(e) {
@@ -237,36 +237,24 @@
 
             document.addEventListener('touchstart', e => {
                 const firstTouch = getTouches(e)[0];                                      
-                xDown = firstTouch.clientX;                                      
                 yDown = firstTouch.clientY;                                      
             });        
             
             document.addEventListener('touchmove', e => {
-                if (!xDown || !yDown) {
+                if (!yDown) {
                     return;
                 }
 
-                var xUp = e.touches[0].clientX;                                    
                 var yUp = e.touches[0].clientY;
-
-                var xDiff = xDown - xUp;
                 var yDiff = yDown - yUp;
 
-                if (Math.abs(xDiff)>Math.abs(yDiff)) { //whichever is greater...
-                    if (xDiff>0 && currentIndex-1>=0) {
-                        currentIndex = up(currentIndex, sections, listElements) //left swipe
-                    } else if (yDiff<0 && currentIndex + 1 < sections.length) {
-                        currentIndex = down(currentIndex, sections, listElements) //right swipe
-                    }                       
-                } else {
-                    if (yDiff>0 && currentIndex+1<sections.length) { 
-                        currentIndex = down(currentIndex, sections, listElements) //down swipe
-                    } else if (yDiff<0 && currentIndex-1>=0) { 
-                        currentIndex = up(currentIndex, sections, listElements) //up swipe
-                    }                                                                 
-                }
-                // reset values 
-                xDown = null;
+                if (yDiff>0 && currentIndex+1<sections.length) { 
+                    currentIndex = down(currentIndex, sections, listElements) //down swipe
+                } else if (yDiff<0 && currentIndex-1>=0) { 
+                    currentIndex = up(currentIndex, sections, listElements) //up swipe
+                }                                                                 
+                
+                // reset value
                 yDown = null;                                             
             })
         </script>
