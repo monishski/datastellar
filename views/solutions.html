@@ -47,7 +47,7 @@
                         <img class="solutions__bar__scroll--mouse" src="./svg/mouse.svg" alt="Mouse SVG">
                         <img class="solutions__bar__scroll--arrow-up" src="./svg/arrow.svg" alt="Arrow Up SVG">
                         <img class="solutions__bar__scroll--arrow-down" src="./svg/arrow.svg" alt="Arrow Down SVG">
-                        <p class="solutions__bar__scroll--text">Scroll</p>
+                        <p class="solutions__bar__scroll--text">Navigate</p>
                     </div>
                 </div>
                 
@@ -59,15 +59,16 @@
                     </div>
                     <div class="solutions__content--text">
                         <h1>Data Management</h1>
-                        <p>Leverage cloud based technologies to manage data</p>
+                        <!-- <p>Leverage cloud based technologies to manage data</p> -->
+                        <p>Leverage the cloud to manage data</p>
                         <ul>
                             <!-- <li>Store data in the cloud and directly benefit from low maintainance and high accessibility</li> -->
                             <!-- <li class="u-margin-top-bottom">Create an agile data management ecosystem and innovate faster</li> -->
                             <!-- <li>Scale easily and flexibly as your business demand grows</li> -->
                             <li>
-                                We offer a data management solution that gives you the ability to store your data in the cloud, 
+                                Our data management solution gives you the ability to store your data in the cloud, 
                                 which means you have access to your data at any time with just a click of a button, 
-                                removing the need for multiple spreadsheets and unnecessary memory taken up. 
+                                removing the need for multiple spreadsheets and unnecessary memory usage. 
                             </li>
                             <li class="u-margin-top">
                                 We know that business growth is important to you, and we want to help you prepare for it. 
@@ -82,7 +83,7 @@
                         <img src="./svg/dashboarding.svg" alt="Dashboarding SVG">
                     </div>
                     <div class="solutions__content--text">
-                        <h1>Dashboarding</h1>
+                        <h1>Data Visualisation</h1>
                         <p>Optimise your business functions and identify inefficiencies through KPIs</p>
                         <ul>
                             <!-- <li>Visualise and monitor real time data through bespoke dashboards with rich user experience</li> -->
@@ -90,13 +91,13 @@
                             <!-- <li>Make actionable business decisions in situ</li> -->
                             <li>
                                 Being able to see your progress and monitor your performance in real time means 
-                                you can easily action business decisions based on your current performance.
+                                you can easily make decisions based on your current performance.
                                 We work with you to design bespoke data driven dashboards with 
                                 rich user experience that ensure your performance is always visible.
                             </li>
                             <li class="u-margin-top">
-                                Having confidence in your data reporting is paramount when analysing your performance 
-                                or even sharing performance with your colleagues. By centralising all your reporting to 
+                                Having confidence in your reporting is paramount when analysing and 
+                                sharing your performance with your colleagues. By centralising all your reporting to 
                                 one easily accessible place, we make sure you have one version of the truth.
                             </li>
                         </ul>
@@ -258,10 +259,10 @@
                         currentIndex = down(currentIndex, sections, listElements) //right swipe
                     }                       
                 } else {
-                    if (yDiff>0 && currentIndex-1>=0) { 
-                        currentIndex = up(currentIndex, sections, listElements) //up swipe
-                    } else if (yDiff<0 && currentIndex+1<sections.length) { 
+                    if (yDiff>0 && currentIndex+1<sections.length) { 
                         currentIndex = down(currentIndex, sections, listElements) //down swipe
+                    } else if (yDiff<0 && currentIndex-1>=0) { 
+                        currentIndex = up(currentIndex, sections, listElements) //up swipe
                     }                                                                 
                 }
                 // reset values 
