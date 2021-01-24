@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap" rel="stylesheet">
         <title>datastellar &#8211; contact us</title>
-
+        <link rel="icon" href="img/favicon.ico"/>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JX90HG17C6"></script>
         <script>
@@ -90,17 +90,6 @@
             <!-- </div> -->
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('.contactus__form--btn').click(function() {
-                    checked = $("input[type=checkbox]:checked").length;
-
-                    if(!checked) {
-                        alert("You must check at least one checkbox.");
-                        return false;
-                    }
-                });
-            }); 
-        </script>
+        <script src="js/contactus_script.js"></script>
     </body>
 </html>

@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="icon" href="img/favicon.ico"/>
         <title>datastellar</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JX90HG17C6"></script>
@@ -14,6 +15,7 @@
             gtag('js', new Date());
 
             gtag('config', 'G-JX90HG17C6');
+
         </script>
     </head>
     <body>
@@ -76,46 +78,19 @@
                 
             </div>
         </div>
-        <script>
-            // Source code: https://css-tricks.com/snippets/css/typewriter-effect/
+        <div class="modal">
+            <div class="modal__content">
+                <h3 class="modal__header">Cookies Disclaimer</h3>
+                This website stores cookies on your computer. 
+                These cookies are used to collect information about how you interact with our website and allow us to remember you. 
+                We use this information in order to improve and customize your browsing experience and for analytics and metrics about our visitors both on this website and other media. 
+                <div class="modal__footer">
+                    <p>Please press Accept to continue</p>
+                    <button class="modal__btn">Accept &rarr;</button>
+                </div>
+            </div>     
+        </div>
 
-            document.addEventListener('DOMContentLoaded', function(event){
-
-            if (document.querySelector(".core__text--h1")) {
-                var texts = [ "We are datastellar." ];
-                
-                function typeWriter(text, i, callback) {
-                    if (i < text.length) { 
-                        var span = '<span class="core__text--span" aria-hidden="true"></span>'; // Border -> Cursor
-                        document.querySelector(".core__text--h1").innerHTML = text.substring(0, i+1) + span
-
-                        setTimeout(function() {
-                            typeWriter(text, i+1, callback)
-                        }, 50);
-                    }      
-                    else if (typeof callback == 'function') { //?
-                        setTimeout(callback, 700); 
-                    }
-                }
-
-                function startTextAnimation(i) {
-                    if (typeof texts[i] == 'undefined'){
-                        setTimeout(function() {
-                            startTextAnimation(0);
-                        }, 20000); //20s?
-                    }   
-                    if (texts[i]) {
-                        if (i < texts[i].length) { 
-                            typeWriter(texts[i], 0, function(){ 
-                                startTextAnimation(i+1); 
-                            });
-                        }
-                    }
-                }
-                
-                startTextAnimation(0); 
-            }
-            });
-        </script>
+        <script src="js/index_script.js"></script>
     </body>
 </html>

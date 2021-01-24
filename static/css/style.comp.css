@@ -595,3 +595,39 @@ body {
     .contactus__form--btn:hover, .contactus__form--btn:focus, .contactus__form--btn:active {
       color: #1aa3ff;
       outline: none; }
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem; }
+  .modal__header {
+    margin-bottom: 2rem; }
+  .modal__content {
+    width: 50%;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 5px 5px #1aa3ff; }
+  .modal__footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem; }
+  .modal__btn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: #1aa3ff;
+    font-size: 2rem; }
