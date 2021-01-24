@@ -40,8 +40,8 @@ app.post('/contactus', function(req, res) {
 
     const options = {
         host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        // port: 465,
+        // secure: true,
         auth: {
             user: process.env.EMAIL,
             pass: process.env.PASSWORD
