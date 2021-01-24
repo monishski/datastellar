@@ -19,7 +19,7 @@
     }
 
     &__content {
-        width: 50%;
+        width: 60%;
         padding: 2rem;
         background-color: white;
         border: 1px solid gray;
@@ -30,6 +30,10 @@
         display: flex;
         justify-content: space-between;
         margin-top: 2rem;
+
+        @media only screen and (max-width: 750px) {
+            flex-direction: column;
+        }
     }
 
     &__btn {
@@ -42,5 +46,10 @@
         outline: inherit;
         color: $color-primary;
         font-size: 2rem;
+
+        @media only screen and (max-width: 750px) {
+            margin-top: 2rem;
+            margin-right: auto;
+        }
     }
 }

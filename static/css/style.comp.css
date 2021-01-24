@@ -612,7 +612,7 @@ body {
   .modal__header {
     margin-bottom: 2rem; }
   .modal__content {
-    width: 50%;
+    width: 60%;
     padding: 2rem;
     background-color: white;
     border: 1px solid gray;
@@ -621,6 +621,9 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem; }
+    @media only screen and (max-width: 750px) {
+      .modal__footer {
+        flex-direction: column; } }
   .modal__btn {
     background: none;
     color: inherit;
@@ -631,3 +634,7 @@ body {
     outline: inherit;
     color: #1aa3ff;
     font-size: 2rem; }
+    @media only screen and (max-width: 750px) {
+      .modal__btn {
+        margin-top: 2rem;
+        margin-right: auto; } }
