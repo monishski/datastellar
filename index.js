@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 
-dotenv.config();
+// dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
@@ -44,8 +44,13 @@ app.post('/contactus', function(req, res) {
         port: 587,
         secure: false,
         auth: {
+            // user: process.env.EMAIL,
+            // pass: process.env.PASSWORD
+            type: 'OAuth2',
             user: process.env.EMAIL,
-            pass: process.env.PASSWORD
+            clientId: process.env.CLIENT_ID,
+            clientSecret: process.env.CLIENT_SECRET,
+            refreshToken: process.env.REFRESH_TOKEN,
         }
     }
     const transporter = nodemailer.createTransport(options)
