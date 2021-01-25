@@ -39,6 +39,7 @@ app.post('/contactus', function(req, res) {
     const services = Object.values(servicesObject).join(', ');
 
     const options = {
+        service: 'gmail',
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
@@ -65,6 +66,7 @@ app.post('/contactus', function(req, res) {
 
     transporter.sendMail(message, (error, response) => {
         if (error) {
+            console.log(error)
             console.error("There was an error during the email sending process")
         }
         else {
