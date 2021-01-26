@@ -8,4 +8,4 @@ This is a mock website for a data consultancy start up.
 
 #### Mobile Version:
 
-![Mobile Version](./static/img/mobile.JPG)
+![Mobile Version](./static/img/mobile.jpg)
