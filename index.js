@@ -6,7 +6,7 @@ const nodemailer = require('nodemailer');
 // dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -75,12 +75,15 @@ app.post('/contactus', function(req, res) {
             console.error("There was an error during the email sending process")
         }
         else {
-            res.redirect('/')
+            res.redirect('/thankyou')
         }
     })
     
 })
 
+app.get('/thankyou', function(req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'thankyou.html'));
+});
 
 app.listen(PORT, () => {
     console.log('Server is starting on PORT,', PORT)
