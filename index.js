@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 // const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
+// const { google } = require('googleapis')
 
 // dotenv.config();
 
@@ -24,7 +25,7 @@ app.get('/contactus', function(req, res) {
     res.sendFile(path.join(__dirname, 'views', 'contactus.html'));
 });
 
-app.post('/contactus', function(req, res) {
+app.post('/contactus', async function(req, res) {
     // console.log(req.body)
 
     const servicesObject = Object.keys(req.body)
@@ -38,26 +39,40 @@ app.post('/contactus', function(req, res) {
         
     const services = Object.values(servicesObject).join(', ');
 
+    // const REDIRECT_URI = 'https://developers.google.com/oauthplayground'
+    // const oAuth2Client = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, REDIRECT_URI)
+
+    // oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN })
+    // const ACCESS_TOKEN = await oAuth2Client.getAccessToken()
+
     const options = {
-        service: 'gmail',
-        host: 'smtp.gmail.com',
+        // service: 'gmail',
+        // host: 'smtp.gmail.com',
+        host: 'mail.privateemail.com',
         port: 587,
+        // port: 465,
         secure: false,
         auth: {
+            // type: 'OAuth2',
             // user: process.env.EMAIL,
-            // pass: process.env.PASSWORD
-            type: 'OAuth2',
-            user: process.env.EMAIL,
-            clientId: process.env.CLIENT_ID,
-            clientSecret: process.env.CLIENT_SECRET,
-            refreshToken: process.env.REFRESH_TOKEN,
+            user: process.env.NAMECHEAP_EMAIL,
+            pass: process.env.NAMECHEAP_PASSWORD,
+            // clientId: process.env.CLIENT_ID,
+            // clientSecret: process.env.CLIENT_SECRET,
+            // refreshToken: process.env.REFRESH_TOKEN,
+            // accessToken: ACCESS_TOKEN
+        },
+        tls: {
+            secureProtocol: "TLSv1_method"
         }
     }
     const transporter = nodemailer.createTransport(options)
 
     const message = {
-        from: req.body.email, // This is ignored by Gmail
-        to: process.env.EMAIL,
+        // from: req.body.email, // This is ignored by Gmail
+        from: process.env.NAMECHEAP_EMAIL,
+        // to: process.env.EMAIL,
+        to: process.env.NAMECHEAP_EMAIL,
         subject: `datastellar.io - ${req.body.name} from ${req.body.company} reached out`,
         html: `
             <p><b>Name:</b> ${req.body.name}</p>
